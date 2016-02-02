@@ -11,6 +11,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<h1>Found Pairs: {{totalMatches}}</h1>
+            <h3>Total Guesses: {{numGuesses}} <span ng-show="totalMatches">or {{totalMatches/numGuesses*100}}% Correct Guesses</span></h3>
 		</div>
 		<div class="row text-center">
 			<div class="col-sm-10 col-sm-offset-1">
@@ -28,8 +29,9 @@
 				</div>
 				
 				<div class="alert alert-success" ng-show="victory">
-					<h1>You are victorious, However it took you a ridiculous {{attempts}} attemps to win. Perhaps you should focus on your memory rather than drinking <a href="http://freedrinkpubs.co.uk/register" target="_blank">Claim your free Pint</a></h1>
-				</div>
+					<h1>You are victorious, However it took you a ridiculous {{numGuesses}} attemps to win. Perhaps you should focus on your memory rather than drinking <a href="http://freedrinkpubs.co.uk/register" target="_blank">Claim your free Pint</a></h1>
+				<button ng-click="startFresh()">Click to play again!</button>
+                </div>
 				
 			</div>
 		</div>
